@@ -1,4 +1,4 @@
-# Variance-Reduction Guidance: Sampling Trajectory Optimization for Diffusion Models
+# [ICME 2025] Variance-Reduction Guidance: Sampling Trajectory Optimization for Diffusion Models
 *[Shifeng Xu](https://www.linkedin.com/in/shifeng-xu-a1b93517/), 
  [Yanzhu Liu](https://openreview.net/profile?id=~Yanzhu_Liu2), 
  [Adams Wai-Kin Kong](https://personal.ntu.edu.sg/AdamsKong/)*
@@ -31,3 +31,24 @@ VRG is applicable to both conditional and unconditional generation.
 Experiments on various datasets and baselines demonstrate that 
 VRG can significantly improve the generation quality of diffusion models. 
 
+## How to run
+The code of this project is self-contained and can be run directly without any additional files.
+```code
+python main.py         \
+  --n_epochs   3000    \
+  --lr         0.0002  \
+  --lp         0.01    \
+  --reg_lambda 100
+```
+
+## Citation
+If this work is helpful for your research, please consider citing:
+
+```
+@inproceedings{icme2025_vrg_shifeng_xu,
+    title={Variance-Reduction Guidance: Sampling Trajectory Optimization for Diffusion Models}, 
+    author={Shifeng Xu, Yanzhu Liu, Adams Wai-Kin Kong},
+    booktitle={ICME},
+    year={2025},
+}
+```
