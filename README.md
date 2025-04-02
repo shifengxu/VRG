@@ -6,7 +6,6 @@
 Official Github Repo for Variance-Reduction Guidance: Sampling Trajectory Optimization for Diffusion Models
 
 <img src="docs/fig_bedroom-compare-with-inter-steps.png" alt="">
-
 Sampling process of DPM-Solver with order=2, schedule= *quadratic* and steps=10. 
 (a) Original and optimized trajectories. 
 The former has noise level sequence as 
@@ -30,6 +29,25 @@ which has the same number of sampling steps but produces higher quality results.
 VRG is applicable to both conditional and unconditional generation. 
 Experiments on various datasets and baselines demonstrate that 
 VRG can significantly improve the generation quality of diffusion models. 
+
+## Fundamental: The prediction error follows a Gaussian distribution.
+Given a noisy sample and a timestep, diffusion models predict the noise within the sample. 
+However, the prediction is not perfectly accurate and contains some error. 
+Even in well-trained models, this error persists. Such prediction error follows Gaussian distribution.
+<img src="docs/fig_pred_error_follow_gaussian.png" alt="">
+
+## Our method
+The sampling process of diffusion models consists of a sequence of iterative sampling steps. 
+Between two adjacent steps, diffusion models not only transform samples but also transfer error. 
+While the former is intended, the latter hinders the generation quality. 
+Prediction error exists in every sampling step, and accumulates across sampling process. 
+
+This paper introduces a novel technique for statistically measuring the prediction error and
+proposes the Variance-Reduction Guidance (``VRG``) method to mitigate this error. 
+Specifically, VRG optimizes sampling trajectory by adjusting the noise level of each sampling step. 
+To achieve this, we employ a neural network to refine the trajectory 
+by minimizing the variance of the prediction error. 
+<img src="./docs/fig_VRG_network_flowchart.png" alt="" >
 
 ## How to run
 The code of this project is self-contained and can be run directly without any additional files.
