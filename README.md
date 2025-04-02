@@ -5,22 +5,11 @@
 
 Official Github Repo for Variance-Reduction Guidance: Sampling Trajectory Optimization for Diffusion Models
 
-<div style="display: flex; justify-content: center">
-<table style="border-collapse: collapse; border:none">
-<tr style="border:none">
-<td style="padding: 0; border:none"><img src="docs/fig_abc_o2_s10_tq.png" width="300" alt="" /></td>
-<td style="padding: 0; border:none"><img src="docs/fig_bedroom-compare-with-inter-steps.png" width="620" alt="" /></td>
-</tr>
-<tr style="text-align: center; border:none">
-<td style="padding: 0; border:none">(a) Sampling trajectories</td>
-<td style="padding: 0; border:none">(b) Image generation progress by original (top) and optimized (bottom) trajectories</td>
-</tr>
-</table>
-</div>
+<img src="docs/fig_bedroom-compare-with-inter-steps.png" alt="">
 
 Sampling process of DPM-Solver with order=2, schedule= *quadratic* and steps=10. 
 (a) Original and optimized trajectories. 
-The former has noise level sequence $\{\bar{\alpha}_k\}_{k=1}^K$ as 
+The former has noise level sequence as 
 {0.995, 0.97, 0.88, 0.72, 0.48, 0.23, 0.075, 0.0137, 0.00118, 0.000040}, and the latter has 
 {0.991, 0.95, 0.86, 0.69, 0.45, 0.22, 0.068, 0.0129, 0.00121, 0.000054}. 
 (b) Column 1 is generated images, column 6 is the initial Gaussian noises, 
